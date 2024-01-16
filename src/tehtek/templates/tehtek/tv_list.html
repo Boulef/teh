@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV List</title>
+</head>
+<body>
+    <h1>TV List</h1>
+    <ul>
+        {% for tv in tv_list %}
+            <li>
+                <strong>{{ tv.manufacturer }} {{ tv.model }}</strong><br>
+                Screen Size: {{ tv.screen_size }} inches<br>
+                Resolution: {{ tv.resolution }}<br>
+                Display Technology: {{ tv.display_technology }}<br>
+                {% if tv.is_smart_tv %}Smart TV{% else %}Not a Smart TV{% endif %}<br>
+                {% if tv.operating_system %}Operating System: {{ tv.operating_system }}<br>{% endif %}
+                Refresh Rate: {{ tv.refresh_rate }} Hz<br>
+                {% if tv.connectivity %}Connectivity: {{ tv.connectivity }}<br>{% endif %}
+                {% if tv.ports %}Ports: {{ tv.ports }}<br>{% endif %}
+                {% if tv.sound_system %}Sound System: {{ tv.sound_system }}<br>{% endif %}
+                {% if tv.additional_features %}Additional Features: {{ tv.additional_features }}<br>{% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
